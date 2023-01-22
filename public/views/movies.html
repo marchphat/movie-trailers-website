@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movies | 24FILMS</title>
+    <link rel="icon" href="/img/icon-in-title.png" type="image/x-icon">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/movies-style.css" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@700&family=Montserrat:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css" />
+</head>
+
+<body>
+
+    <!-- Header Start -->
+    <header class="header p-3 position-absolute start-0 top-0 end-0">
+        <div id="header" class="d-flex fixed-top justify-content-between align-items-center px-5 navbar-expand-md"
+            style="height: 100px; background-color: #000000; transition: 0.5s ease;">
+            <a href="/" class="text-decoration-none text-white fs-1 fw-bold">24FILMS</a>
+
+            <div>
+                <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
+                        class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                    </svg>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav justify-content-between fs-5" style="width: 350px; height: 100%">
+                        <li class="nav-item">
+                            <a class="nav-link text-white point__nav-link" href="/"
+                                style="--pointer-color: white">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white fw-bold point__nav-link" href="/movies"
+                                style="--pointer-color: white">Movies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white point__nav-link" href="/gallery"
+                                style="--pointer-color: white">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/log-out"><i class="bi bi-arrow-right-circle-fill"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script type="text/javascript">
+        let lastScrolledTop = 0;
+        let header = document.getElementById('header');
+
+        window.addEventListener('scroll', () => {
+            let scrollTop = window.scrollYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrolledTop) {
+                header.style.top = '-100%'
+            } else {
+                header.style.top = '0';
+            };
+
+            lastScrolledTop = scrollTop;
+        });
+    </script>
+    <!-- Header End -->
+
+    <!-- Flyout Navigation Start -->
+    <nav class="collapse navbar-collapse dropdown-nav" id="navbar">
+        <div class="dropdown-nav__container container-xxl d-flex align-items-center">
+            <div class="row align-items-start">
+                <div class="col-12">
+                    <a href="/" class="row text-decoration-none">
+                        <h1 class="display-4 text-white">Home</h1>
+                    </a>
+                </div>
+                <div class="col-12 mt-4">
+                    <a href="/movies" class="row text-decoration-none">
+                        <h1 class="display-4 text-white">Movies</h1>
+                    </a>
+                </div>
+                <div class="col-12 mt-4">
+                    <a href="/gallery" class="row text-decoration-none">
+                        <h1 class="display-4 text-white">Gallery</h1>
+                    </a>
+                </div>
+                <div class="col-12 mt-4">
+                    <a href="/log-out" class="row text-decoration-none">
+                        <h1 class="display-4 text-white">Sign Out</h1>
+                    </a>
+                </div>
+            </div>
+
+            <button class="navbar-toggler dropdown-nav__closeNavBtn" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-x"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+    <!-- Flyout Navigation End -->
+
+    <!-- Image Gallery Start -->
+    <div class="container-fluid" style="padding: 130px 3rem 0 3rem;">
+        <div class="my-4">
+            <h1 class="hero__heading" style="color:darkgrey;">Upcoming</h1>
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <a href="/booksmart">
+                    <img src="/img/img-booksmart/booksmart.jpg" />
+                </a>
+                <h5 class="mt-3">COMING SOON</h5>
+                <h3 class="fw-bold mb-5">Booksmart</h3>
+                <a href="/blind">
+                    <img src="/img/img-blind/blind.png" />
+                </a>
+                <h5 class="mt-3">COMING SOON</h5>
+                <h3 class="fw-bold mb-5">Blind</h3>
+            </div>
+            <div class="column mx-4">
+                <a href="/fear-street">
+                    <img src="/img/img-fear-street/fear-street.jpg">
+                </a>
+                <h5 class="mt-3">COMING SOON</h5>
+                <h3 class="fw-bold mb-5">Fear Street</h3>
+            </div>
+            <div class="column">
+                <a href="/inspector-koo-mov">
+                    <img src="/img/img-inspector-koo/inspector-koo.png" />
+                </a>
+                <h5 class="mt-3">COMING SOON</h5>
+                <h3 class="fw-bold mb-5">Inspector Koo</h3>
+                <a href="/squid-game">
+                    <img src="/img/img-squid-game/squid-game.jpg" />
+                </a>
+                <h5 class="mt-3">COMING SOON</h5>
+                <h3 class="fw-bold mb-5">Squid Game</h3>
+            </div>
+        </div>
+    </div>
+    <!-- Image Gallery End -->
+</body>
+
+</html>

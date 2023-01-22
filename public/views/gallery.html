@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery | 24FILMS</title>
+    <link rel="icon" href="/img/icon-in-title.png" type="image/x-icon">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/gallery-style.css" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@700&family=Montserrat:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css" />
+</head>
+
+<body>
+    <!-- Header Start -->
+    <header class="header p-3 position-absolute start-0 top-0 end-0">
+        <div id="navbar-container"
+            class="d-flex fixed-top justify-content-between align-items-center px-5 navbar-expand-md"
+            style="height: 100px;">
+            <a href="/" class="text-decoration-none text-dark fs-1 fw-bold">24FILMS</a>
+
+            <div>
+                <button class="navbar-toggler text-dark" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
+                        class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                    </svg>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav justify-content-between fs-5" style="width: 350px; height: 100%">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark point__nav-link" href="/"
+                                style="--pointer-color: black">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark point__nav-link" href="/movies"
+                                style="--pointer-color: black">Movies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fw-bold point__nav-link" href="/gallery"
+                                style="--pointer-color: black">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/log-out"><i class="bi bi-arrow-right-circle-fill"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script>
+        const nav = document.getElementById('navbar-container');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY >= 50) {
+                nav.classList.add('active_nav');
+            } else {
+                nav.classList.remove('active_nav');
+            }
+        })
+    </script>
+    <!-- Header End -->
+
+    <!-- Flyout Navigation Start -->
+    <nav class="collapse navbar-collapse dropdown-nav" id="navbar">
+        <div class="dropdown-nav__container container-xxl d-flex align-items-center">
+            <div class="row align-items-start">
+                <div class="col-12">
+                    <a href="/" class="row text-decoration-none">
+                        <h1 class="display-4 text-white">Home</h1>
+                    </a>
+                </div>
+                <div class="col-12 mt-4">
+                    <a href="/movies" class="row text-decoration-none">
+                        <h1 class="display-4 text-white">Movies</h1>
+                    </a>
+                </div>
+                <div class="col-12 mt-4">
+                    <a href="/gallery" class="row text-decoration-none">
+                        <h1 class="display-4 text-white">Gallery</h1>
+                    </a>
+                </div>
+                <div class="col-12 mt-4">
+                    <a href="/log-out" class="row text-decoration-none">
+                        <h1 class="display-4 text-white">Sign Out</h1>
+                    </a>
+                </div>
+            </div>
+
+            <button class="navbar-toggler dropdown-nav__closeNavBtn" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-x"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+    <!-- Flyout Navigation End -->
+
+    <!-- Hero Start -->
+    <section class="hero">
+
+        <div class="d-flex h-100 justify-content-md-center container-custom position-relative">
+            <div class="d-flex h-100 justify-content-md-center align-items-center text-center">
+                <div class="d-flex flex-column align-items-center text-dark">
+                    <h1 class="hero__heading fw-bold mb-2" style="line-height: 80%;">MOVIE<br>GALLERY</h1>
+                    <p class="hero__heading-caption w-50">A COLLECTION OF MOVIES'S PHOTOS, PAST AND PRESENT SOME BUILT
+                        FOR TODAY,
+                        FOR
+                        TOMORROW AND OTHERS FOR THE FUTURE FROM PRODUCTION COMPANIES.</p>
+                    <a href="#scroll-down"
+                        class="hero__scroll-btn mt-4 d-flex flex-column align-items-center text-dark justify-content-md-center"
+                        style="text-decoration: none;">
+                        Explore <i class="bi bi-arrow-down-short"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- Hero End -->
+
+    <a id="scroll-down"></a>
+
+    <!-- Image Gallery Start -->
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-4 mt-1 col-lg-4 p-1 align-self-center">
+                <div class="image-container img-fluid w-100 rounded-3" data-bs-toggle="modal" data-bs-target="#img"
+                    onclick="downloadImage(1)">
+                    <div class="image-container img-fluid w-100 rounded-3"
+                        style="background-image: url('/img/img-blind/blind-01.png');">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mt-1 col-lg-4 p-1 align-self-center" data-bs-toggle="modal" data-bs-target="#img"
+            onclick="downloadImage(2)">
+                <div class="image-container img-fluid w-100 rounded-3"
+                    style="background-image: url('/img/img-blind/blind-02.jpg');">
+                </div>
+            </div>
+            <div class="col-md-4 mt-1 col-lg-4 p-1 align-self-center" data-bs-toggle="modal" data-bs-target="#img"
+            onclick="downloadImage(3)">
+                <div class="image-container img-fluid w-100 rounded-3"
+                    style="background-image: url('/img/img-blind/blind-03.jpg');">
+                </div>
+            </div>
+
+            <div class="col-md-4 mt-0 col-lg-5 p-1 align-self-center" data-bs-toggle="modal" data-bs-target="#img"
+            onclick="downloadImage(4)">
+                <div class="image-container img-fluid w-100 rounded-3"
+                    style="background-image: url('/img/img-booksmart/booksmart-01.jpg');">
+                </div>
+            </div>
+            <div class="col-md-4 mt-0 col-lg-7 p-1 align-self-center" data-bs-toggle="modal" data-bs-target="#img" 
+            onclick="downloadImage(5)">
+                <div class="image-container img-fluid w-100 rounded-3"
+                    style="background-image: url('/img/img-booksmart/booksmart-02.jpg');">
+                </div>
+            </div>
+
+            <div class="col-md-4 mt-0 col-lg-2 p-1 align-self-center" data-bs-toggle="modal" data-bs-target="#img" 
+            onclick="downloadImage(6)">
+                <div class="image-container img-fluid w-100 rounded-3"
+                    style="background-image: url('/img/img-booksmart/booksmart-03.jpg');">
+                </div>
+            </div>
+            <div class="col-md-4 mt-0 col-lg-4 p-1 align-self-center" data-bs-toggle="modal" data-bs-target="#img" 
+            onclick="downloadImage(7)">
+                <div class="image-container img-fluid w-100 rounded-3"
+                    style="background-image: url('/img/img-fear-street/fear-street-01.jpg');">
+                </div>
+            </div>
+            <div class="col-md-4 mt-0 col-lg-3 p-1 align-self-center" data-bs-toggle="modal" data-bs-target="#img" 
+            onclick="downloadImage(8)">
+                <div class="image-container img-fluid w-100 rounded-3"
+                    style="background-image: url('/img/img-fear-street/fear-street-02.jpg');">
+                </div>
+            </div>
+            <div class="col-md-4 mt-0 col-lg-3 p-1 align-self-center" data-bs-toggle="modal" data-bs-target="#img" 
+            onclick="downloadImage(9)">
+                <div class="image-container img-fluid w-100 rounded-3"
+                    style="background-image: url('/img/img-fear-street/fear-street-03.jpg');">
+                </div>
+            </div>
+
+            <div class="col-md-4 mt-1 col-lg-4 p-1 align-self-center" data-bs-toggle="modal" data-bs-target="#img" 
+            onclick="downloadImage(10)">
+                <div class="image-container img-fluid w-100 rounded-3"
+                    style="background-image: url('/img/img-inspector-koo/inspector-koo-01.jpg');">
+                </div>
+            </div>
+            <div class="col-md-4 mt-1 col-lg-4 p-1 align-self-center" data-bs-toggle="modal" data-bs-target="#img" 
+            onclick="downloadImage(11)">
+                <div class="image-container img-fluid w-100 rounded-3"
+                    style="background-image: url('/img/img-inspector-koo/inspector-koo-02.jpg');">
+                </div>
+            </div>
+            <div class="col-md-4 mt-1 col-lg-4 p-1 align-self-center" data-bs-toggle="modal" data-bs-target="#img" 
+            onclick="downloadImage(12)">
+                <div class="image-container img-fluid w-100 rounded-3"
+                    style="background-image: url('/img/img-inspector-koo/inspector-koo-03.jpg');">
+                </div>
+            </div>
+
+            <div class="col-md-4 mt-0 col-lg-5 p-1 align-self-center" data-bs-toggle="modal" data-bs-target="#img" 
+            onclick="downloadImage(13)">
+                <div class="image-container img-fluid w-100 rounded-3"
+                    style="background-image: url('/img/img-squid-game/squid-game-01.jpg');">
+                </div>
+            </div>
+            <div class="col-md-4 mt-0 col-lg-7 p-1 align-self-center" data-bs-toggle="modal" data-bs-target="#img" 
+            onclick="downloadImage(14)">
+                <div class="image-container img-fluid w-100 rounded-3"
+                    style="background-image: url('/img/img-squid-game/squid-game-02.jpg');">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="img">
+        <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+            <div class="modal-content bg-primary">
+
+                <div class="modal-body text-center">
+                    <a id="image-download" href="#" class="text-decoration-none text-white"><i
+                            class="bi bi-arrow-down-circle-fill me-2"></i>Download Image</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        function downloadImage(id) {
+            var image = document.getElementById('image-download');
+            if (id == 1) {
+                image.href = '/download/img-1';
+            } else if (id == 2) {
+                image.href = '/download/img-2';
+            } else if (id == 3) {
+                image.href = '/download/img-3';
+            } else if (id == 4) {
+                image.href = '/download/img-4';
+            } else if (id == 5) {
+                image.href = '/download/img-5';
+            } else if (id == 6) {
+                image.href = '/download/img-6';
+            } else if (id == 7) {
+                image.href = '/download/img-7';
+            } else if (id == 8) {
+                image.href = '/download/img-8';
+            } else if (id == 9) {
+                image.href = '/download/img-9';
+            } else if (id == 10) {
+                image.href = '/download/img-10';
+            } else if (id == 11) {
+                image.href = '/download/img-11';
+            } else if (id == 12) {
+                image.href = '/download/img-12';
+            } else if (id == 13) {
+                image.href = '/download/img-13';
+            } else if (id == 14) {
+                image.href = '/download/img-14';
+            } else {
+                image.href = '#';
+            }
+        };
+    </script>
+    <!-- Image Gallery End -->
+</body>
+
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Squid Game | 24FILMS</title>
+    <link rel="icon" href="/img/icon-in-title.png" type="image/x-icon">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/movie-detail-style.css" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@700&family=Montserrat:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css" />
+</head>
+
+<body>
+    <!-- Header Start -->
+    <header class="header p-3 position-absolute start-0 top-0 end-0">
+        <div class="d-flex fixed-top justify-content-between align-items-center px-5 navbar-expand-md"
+            style="height: 100px;">
+            <a href="/" class="text-decoration-none text-white fs-1 fw-bold">24FILMS</a>
+
+            <div>
+                <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
+                        class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                    </svg>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav justify-content-between fs-5" style="width: 350px; height: 100%">
+                        <li class="nav-item">
+                            <a class="nav-link text-white fw-bold point__nav-link" href="/"
+                                style="--pointer-color: white">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white point__nav-link" href="/movies"
+                                style="--pointer-color: white">Movies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white point__nav-link" href="/gallery"
+                                style="--pointer-color: white">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="/log-out"><i class="bi bi-arrow-right-circle-fill"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Flyout Navigation Start -->
+    <nav class="collapse navbar-collapse dropdown-nav" id="navbar">
+        <div class="dropdown-nav__container container-xxl d-flex align-items-center">
+            <div class="row align-items-start">
+                <div class="col-12">
+                    <a href="/" class="row text-decoration-none">
+                        <h1 class="display-4 text-white">Home</h1>
+                    </a>
+                </div>
+                <div class="col-12 mt-4">
+                    <a href="/movies" class="row text-decoration-none">
+                        <h1 class="display-4 text-white">Movies</h1>
+                    </a>
+                </div>
+                <div class="col-12 mt-4">
+                    <a href="/gallery" class="row text-decoration-none">
+                        <h1 class="display-4 text-white">Gallery</h1>
+                    </a>
+                </div>
+                <div class="col-12 mt-4">
+                    <a href="/log-out" class="row text-decoration-none">
+                        <h1 class="display-4 text-white">Sign Out</h1>
+                    </a>
+                </div>
+            </div>
+
+            <button class="navbar-toggler dropdown-nav__closeNavBtn" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-x"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+    <!-- Flyout Navigation End -->
+
+    <!-- Hero Start -->
+    <section class="hero">
+        <div class="hero__overlay"></div>
+
+        <img src="/img/img-squid-game/squid-game.jpg" alt="Squid Game Movie" class="hero__video">
+
+        <div class="hero__content h-100 w-100 container-custom position-relative">
+            <div class="row h-100 w-100 align-items-end justify-content-center hero__content-width">
+                <div class="col-2 playBut__container mt-5">
+                    <div class="d-flex justify-content-center playBut">
+                        <svg role="button" data-bs-toggle="modal" data-bs-target="#video__pop-up" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" viewBox="0 0 213.7 213.7"
+                            enable-background="new 0 0 213.7 213.7" xml:space="preserve"
+                            style="width: 80%; height: 80%;">
+
+                            <polygon class='triangle' id="XMLID_18_" fill="none" stroke-width="7" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-miterlimit="10" points="
+                        73.5,62.5 148.5,105.8 73.5,149.1 " />
+                        </svg>
+                    </div>
+                </div>
+                <div class="col-12 text-white mb-4">
+                    <h1 class="hero__heading mb-4">
+                        Squid Game
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="video__pop-up">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-body">
+                        <video class="w-100" controls autoplay loop>
+                            <source src="/video/squid-game.mp4">
+                        </video>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero End -->
+
+    <!-- Section One Start -->
+    <section class="steps container-custom w-100 my-5">
+
+        <div class="row">
+            <div class="col-12 col-sm-4 d-md-flex justify-content-md-ceneter">
+                <div class="steps__content-width">
+                    <h1 class="fs-5">DIRECTED BY</h1>
+                    <p class="fw-bold fs-2">Hwang Dong-hyuk</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-4 justify-content-md-ceneter">
+
+                <div class="steps__content-width">
+                    <h1 class="fs-5">RELEASE DATE</h1>
+                    <p class="fw-bold fs-2">Sep 17, 2021</p>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="row align-items-end">
+            <div class="col-12 col-sm-4 d-md-flex justify-content-md-ceneter">
+                <div class="steps__content-width">
+                    <h1 class="fs-5">STARRING</h1>
+                    <p class="fw-bold fs-2">
+                        Lee Jung-jae</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-4 justify-content-md-ceneter">
+
+                <div class="steps__content-width">
+                    <p class="fw-bold fs-2">
+                        Park Hae-soo</p>
+                </div>
+
+            </div>
+
+            <div class="col-12 col-sm-4 justify-content-md-ceneter">
+
+                <div class="steps__content-width">
+                    <p class="fw-bold fs-2">
+                        Hoyeon</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- Section One End -->
+
+    <!-- Section Two Start -->
+    <section class="steps container-custom w-100 my-5 pt-5 border-highlight">
+
+
+        <div class="row justify-content-center">
+
+
+            <div class="col-12 col-sm-4 d-md-flex">
+                <div class="steps__content-width">
+                    <p class="fw-bold fs-4">Hundreds of cash-strapped players accept a strange invitation to compete in
+                        children's games. Inside, a tempting prize awaits with deadly high stakes. A survival game that
+                        has a whopping 45.6 billion-won prize at stake.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- Section Two End -->
+
+
+    <!-- Footer Start -->
+    <footer class="footer text-white" style="background-color: #000000;">
+        <div class="container-custom d-flex justify-content-between align-items-center py-3 w-100 border-highlight">
+            <div class="col-md-4 d-flex align-items-center">
+
+                <a href="#" class="me-2 text-muted text-decoration-none">
+                    <i class="bi bi-cup"></i>
+                    <span>&copy; 2022 - Nantanat Thongthep</span>
+                </a>
+            </div>
+
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex text-white">
+                <li class="ms-3 "><a class="text-muted" href="#"><i class="bi bi-twitter"></i></a></li>
+                <li class="ms-3"><a class="text-muted" href="#"><i class="bi bi-instagram"></i></a></li>
+                <li class="ms-3"><a class="text-muted" href="#"><i class="bi bi-facebook"></i></a></li>
+            </ul>
+
+        </div>
+    </footer>
+    <!-- Footer End -->
+</body>
+
+</html>
