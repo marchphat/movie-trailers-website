@@ -1,3 +1,6 @@
+CREATE DATABASE japan_guide;
+
+
 CREATE TABLE `users` (
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL
